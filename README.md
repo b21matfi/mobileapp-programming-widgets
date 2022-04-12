@@ -2,7 +2,11 @@
 # Rapport
 
 **Skriv din rapport här!**
-
+Jag började med att ändra till linear layout, detta gjorde jag med att lägga till linear istället för constraint layout. efter det la jag till en knapp
+som heter sign in och den använde jag för att logga in till profilen. Edittext användes för att skriva in sitt använder namn. Detta gjordes
+genom att bara lägga till edit text och sedan att man självska skriva in sitt eget namn. Koden som man kan se lite längre ner så ser man att jag har skapat imageview edittext och button, varje element har sitt eget
+id så det är möjligt att hämta det. tillsist i mainacivity så har jag gjort 2 stycken variabler för username och själva knappen först så gjorde jag knappen så att den fungerar. När man klickar på knappen så flyttas
+man till en annan sida alltså sin egen profil. När man skriver in sitt namn så kommer man se sitt eget namn på den andra sidan, koden till det finns inte med.
 _Du kan ta bort all text som finns sedan tidigare_.
 
 ## Följande grundsyn gäller dugga-svar:
@@ -16,19 +20,60 @@ _Du kan ta bort all text som finns sedan tidigare_.
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:contentDescription="his logo"
+        android:layout_marginLeft="500dp"
+
+        app:srcCompat="@drawable/animation" />
+
+    <EditText
+        android:id="@+id/myUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:minHeight="48dp"
+        android:layout_margin="50dp"
+
+        />
+
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signin"
+        android:layout_marginLeft="600dp"
+        />
+
+            private Button Signin;
+            private EditText Username;
+
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+
+                Username = findViewById(R.id.myUsername);
+                Signin = findViewById(R.id.myButton);
+                Signin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("==>", "MainActivity button pressed");
+                        Log.d("==>", "Username"+Username.getText().toString());
+
+
+
+                        Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                        startActivity(intent);
+
+                        intent.putExtra("Username",Username.getText().toString());
+                        startActivity(intent);
+                    }
+                });
+            }
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
