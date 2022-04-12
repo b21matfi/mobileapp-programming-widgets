@@ -7,24 +7,32 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/myUsernameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:layout_margin="5dp"
-        android:text="TextView - 1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:contentDescription="his logo"
+        android:layout_marginLeft="500dp"
+
+        app:srcCompat="@drawable/animation" />
 
     <EditText
         android:id="@+id/myUsername"
-        android:hint="Username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:minHeight="48dp"
+        android:layout_margin="50dp"
+
+        />
 
     <Button
         android:id="@+id/myButton"
-        android:text="Signin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Signin"
+        android:layout_marginLeft="600dp"
+        />
 
 </LinearLayout>

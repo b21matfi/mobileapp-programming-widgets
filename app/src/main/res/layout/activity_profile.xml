@@ -13,4 +13,14 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/myUsernameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorAccent"
+        android:text="TextView - 1"
+        android:textColor="#004D40"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
