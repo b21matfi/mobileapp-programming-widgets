@@ -8,9 +8,11 @@ import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
     private Button Signout;
+    private TextView UsernameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +20,13 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         Signout = findViewById(R.id.myButton_Signout);
+        UsernameView = findViewById(R.id.myUsernameView);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String username = extras.getString("Username");
+
+        UsernameView.setText(username);
 
 
         Signout.setOnClickListener(new View.OnClickListener() {
