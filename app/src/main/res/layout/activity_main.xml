@@ -14,16 +14,16 @@
         android:layout_margin="5dp"
         android:text="TextView - 1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:layout_margin="5dp"
-        android:text="TextView - 2" />
+    <EditText
+        android:id="@+id/myUsername"
+        android:hint="Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/myButton"
         android:text="Signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
 </LinearLayout>
